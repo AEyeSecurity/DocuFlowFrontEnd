@@ -1,0 +1,965 @@
+@use '../../colors' as *;
+
+// Animaciones personalizadas para bots
+@keyframes fadeInBots {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInBots {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes floatBots {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulseBots {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes gradientShiftBots {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes bounceBots {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes glowBots {
+  0%, 100% {
+    box-shadow: 0 0 5px $glow-cyan-30;
+  }
+  50% {
+    box-shadow: 0 0 20px $glow-cyan-60;
+  }
+}
+
+.fade-in-bots {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-bots.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-in-bots {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-in-bots.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+// Hero Section - Diseño único para bots
+.hero-section-bots {
+  background: linear-gradient(-45deg, $primary-color, darken($primary-color, 15%), lighten($primary-color, 10%), darken($primary-color, 10%));
+  background-size: 400% 400%;
+  animation: gradientShiftBots 8s ease infinite;
+  color: $text-color-light;
+  padding-top: 80px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="circuit" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M10 10h20v20h-20z" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.2)"/></pattern></defs><rect width="100" height="100" fill="url(%23circuit)"/></svg>');
+    opacity: 0.3;
+  }
+
+  .hero-badge-bots {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    background: $white-20 !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid $white-30;
+  }
+
+  .hero-title-bots {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .hero-subtitle-bots {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    opacity: 0.95;
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+    }
+  }
+
+  .hero-stats-bots {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .stat-item-bots {
+      text-align: center;
+
+      .stat-number-bots {
+        display: block;
+        font-size: 2rem;
+        font-weight: bold;
+        color: $accent-cyan;
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label-bots {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .hero-buttons-bots {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  .hero-visual-bots {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .hero-logo-bots {
+      max-width: 200px;
+      height: auto;
+      filter: drop-shadow(0 10px 20px $shadow-black-30);
+      animation: floatBots 4s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    .floating-card-bots {
+      position: absolute;
+      background: $white-10;
+      backdrop-filter: blur(10px);
+      border: 1px solid $white-20;
+      border-radius: 15px;
+      padding: 1rem;
+      text-align: center;
+      animation: floatBots 3s ease-in-out infinite;
+
+      .card-icon-bots {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .card-text-bots {
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+
+      &.card-1-bots {
+        top: 20%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+
+      &.card-2-bots {
+        top: 60%;
+        right: 10%;
+        animation-delay: 1s;
+      }
+
+      &.card-3-bots {
+        bottom: 20%;
+        left: 20%;
+        animation-delay: 2s;
+      }
+    }
+  }
+}
+
+// Botones personalizados
+.btn-primary-custom-bots {
+  background: linear-gradient(45deg, $text-color-light, lighten($text-color-light, 5%));
+  border: none;
+  color: $primary-color;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px $shadow-black-20;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, $white-30, transparent);
+    transition: left 0.5s;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px $shadow-black-30;
+    color: $primary-color;
+
+    &::before {
+      left: 100%;
+    }
+  }
+}
+
+.btn-secondary-custom-bots {
+  background-color: transparent !important;
+  border: 2px solid $white-80 !important;
+  color: $text-color-light !important;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: $white-10;
+    transition: width 0.3s ease;
+    z-index: -1;
+  }
+
+  &:hover, &:focus, &:active, &:visited {
+    background-color: transparent !important;
+    border: 2px solid $text-color-light !important;
+    color: $text-color-light !important;
+    transform: translateY(-2px);
+    text-decoration: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+
+    &::before {
+      width: 100%;
+    }
+  }
+}
+
+.btn-large-bots {
+  padding: 1rem 3rem;
+  font-size: 1.1rem;
+}
+
+// Services Section - Tarjetas horizontales
+.services-section-bots {
+  padding: 5rem 0;
+  background: $background-light-gray;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(0,0,0,0.03)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+  }
+
+  .section-title-bots {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: $text-color-dark;
+    margin-bottom: 1rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, $primary-color, lighten($primary-color, 20%));
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+
+  .section-subtitle-bots {
+    font-size: 1.2rem;
+    color: $text-color-light-contrast;
+    margin-bottom: 3rem;
+  }
+
+  .service-card-horizontal-bots {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: $background-card-white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px $shadow-black-10;
+    transition: all 0.4s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, $primary-color, lighten($primary-color, 20%));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px $shadow-black-15;
+
+      &::before {
+        transform: scaleX(1);
+      }
+
+      .service-icon-bots {
+        animation: bounceBots 1s ease;
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .service-icon-bots {
+      font-size: 3rem;
+      flex-shrink: 0;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, $primary-color, lighten($primary-color, 15%));
+      border-radius: 50%;
+      color: $text-color-light;
+              box-shadow: 0 8px 20px $glow-cyan-30;
+    }
+
+    .service-content-bots {
+      flex: 1;
+
+      h3 {
+        font-weight: bold;
+        color: $text-color-dark;
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+      }
+
+      p {
+        color: $text-color-light-contrast;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .service-features-bots {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+
+        .feature-tag-bots {
+          background: linear-gradient(45deg, $primary-color, lighten($primary-color, 15%));
+          color: $text-color-light;
+          padding: 0.25rem 0.75rem;
+          border-radius: 15px;
+          font-size: 0.8rem;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+// Process Section - Timeline
+.process-section-bots {
+  padding: 5rem 0;
+  background: linear-gradient(darken($background-color-dark, 30%), darken($background-color-dark, 70%) 100%);
+  color: $text-color-light;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="hexagons" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M15 0L30 8.66L30 26.34L15 35L0 26.34L0 8.66Z" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23hexagons)"/></svg>');
+  }
+
+  .section-title-bots {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: $text-color-light;
+    margin-bottom: 1rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, $primary-color, lighten($primary-color, 20%));
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+
+  .section-subtitle-bots {
+    font-size: 1.2rem;
+    color: $white-80;
+    margin-bottom: 3rem;
+  }
+
+  .timeline-bots {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, $primary-color, lighten($primary-color, 20%));
+      transform: translateX(-50%);
+
+      @media (max-width: 768px) {
+        left: 20px;
+      }
+    }
+
+    .timeline-item-bots {
+      position: relative;
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+
+      &:nth-child(odd) {
+        flex-direction: row;
+
+        .timeline-content-bots {
+          margin-left: 2rem;
+          text-align: left;
+
+          @media (max-width: 768px) {
+            margin-left: 3rem;
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+
+        .timeline-content-bots {
+          margin-right: 2rem;
+          text-align: right;
+
+          @media (max-width: 768px) {
+            margin-right: 0;
+            margin-left: 3rem;
+            text-align: left;
+          }
+        }
+      }
+
+      .timeline-marker-bots {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, $primary-color, lighten($primary-color, 15%));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: $text-color-light;
+        box-shadow: 0 8px 20px $glow-cyan-30;
+        animation: glowBots 2s ease-in-out infinite;
+        flex-shrink: 0;
+        z-index: 2;
+
+        @media (max-width: 768px) {
+          position: absolute;
+          left: 0;
+        }
+      }
+
+      .timeline-content-bots {
+        background: $white-10;
+        backdrop-filter: blur(10px);
+        border: 1px solid $white-20;
+        border-radius: 15px;
+        padding: 1.5rem;
+        flex: 1;
+
+        h4 {
+          font-weight: bold;
+          margin-bottom: 0.5rem;
+          font-size: 1.3rem;
+        }
+
+        p {
+          line-height: 1.6;
+          margin-bottom: 1rem;
+          opacity: 0.9;
+        }
+
+        .timeline-duration-bots {
+          font-size: 0.9rem;
+          color: $primary-color;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+// Technologies Section - Grid de tecnologías
+.technologies-section-bots {
+  padding: 5rem 0;
+  background: $background-light-gray;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="circles" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="12.5" cy="12.5" r="2" fill="rgba(0,0,0,0.03)"/></pattern></defs><rect width="100" height="100" fill="url(%23circles)"/></svg>');
+  }
+
+  .section-title-bots {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: $text-color-dark;
+    margin-bottom: 1rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, $primary-color, lighten($primary-color, 20%));
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+
+  .section-subtitle-bots {
+    font-size: 1.2rem;
+    color: $text-color-light-contrast;
+    margin-bottom: 3rem;
+  }
+
+  .tech-card-bots {
+    text-align: center;
+    padding: 2rem;
+    background: $background-card-white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px $shadow-black-10;
+    transition: all 0.4s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, $primary-color, lighten($primary-color, 20%));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px $shadow-black-15;
+
+      &::before {
+        transform: scaleX(1);
+      }
+
+      .tech-icon-bots {
+        animation: pulseBots 1s ease;
+      }
+    }
+
+    .tech-icon-bots {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    h4 {
+      font-weight: bold;
+      color: $text-color-dark;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    p {
+      color: $text-color-light-contrast;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+  }
+}
+
+// Pricing Section - Tarjetas de precios
+.pricing-section-bots {
+  padding: 5rem 0;
+  background: linear-gradient(darken($background-color-dark, 30%), darken($background-color-dark, 70%) 100%);
+  color: $text-color-light;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="squares" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="20" height="20" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23squares)"/></svg>');
+  }
+
+  .section-title-bots {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: $text-color-light;
+    margin-bottom: 1rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, $primary-color, lighten($primary-color, 20%));
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+
+  .section-subtitle-bots {
+    font-size: 1.2rem;
+    color: $white-80;
+    margin-bottom: 3rem;
+  }
+
+  .pricing-card-bots {
+    background: $white-10;
+    backdrop-filter: blur(10px);
+    border: 1px solid $white-20;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    &.featured-bots {
+      background: $primary-transparent-10;
+      border-color: $glow-cyan-30;
+      transform: scale(1.05);
+
+      .pricing-badge-bots {
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(45deg, $primary-color, lighten($primary-color, 15%));
+        color: $text-color-light;
+        padding: 0.5rem 1.5rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+    }
+
+    &:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px $shadow-black-20;
+
+      &.featured-bots {
+        transform: translateY(-10px) scale(1.07);
+      }
+    }
+
+    .pricing-header-bots {
+      margin-bottom: 2rem;
+
+      h3 {
+        font-weight: bold;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+
+      .price-bots {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: $primary-color;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        opacity: 0.8;
+        margin: 0;
+      }
+    }
+
+    .pricing-features-bots {
+      margin-bottom: 2rem;
+
+      .feature-bots {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid $white-10;
+        text-align: left;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+
+    .btn-primary-custom-bots {
+      background: linear-gradient(45deg, $primary-color, lighten($primary-color, 15%));
+      color: $text-color-light;
+      border: none;
+      font-weight: bold;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px $shadow-black-20;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px $shadow-black-30;
+        color: $text-color-light;
+      }
+    }
+  }
+}
+
+// CTA Section
+.cta-section-bots {
+  padding: 5rem 0;
+  background: linear-gradient(-45deg, $primary-color, darken($primary-color, 15%), lighten($primary-color, 10%), darken($primary-color, 10%));
+  background-size: 400% 400%;
+  animation: gradientShiftBots 8s ease infinite;
+  color: $text-color-light;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+  }
+
+  .cta-content-bots {
+    position: relative;
+    z-index: 2;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .cta-buttons-bots {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .hero-section-bots {
+    padding-top: 100px;
+    text-align: center;
+
+    .hero-visual-bots {
+      height: 300px;
+      margin-top: 2rem;
+
+      .floating-card-bots {
+        display: none;
+      }
+    }
+  }
+
+  .services-section-bots,
+  .process-section-bots,
+  .technologies-section-bots,
+  .pricing-section-bots,
+  .cta-section-bots {
+    padding: 3rem 0;
+  }
+
+  .service-card-horizontal-bots {
+    margin-bottom: 1.5rem;
+  }
+
+  .tech-card-bots {
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-card-bots {
+    margin-bottom: 2rem;
+
+    &.featured-bots {
+      transform: scale(1);
+    }
+  }
+
+  .timeline-bots {
+    .timeline-item-bots {
+      &:nth-child(even) {
+        flex-direction: row;
+
+        .timeline-content-bots {
+          margin-right: 0;
+          margin-left: 3rem;
+          text-align: left;
+        }
+      }
+    }
+  }
+}

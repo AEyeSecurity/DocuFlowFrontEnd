@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DocuFlow">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#103050"/>
+      <stop offset="100%" stop-color="#0b2440"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#18B7A0"/>
+      <stop offset="100%" stop-color="#78E4DC"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#bg)"/>
+  <path d="M22 16h10.5c9.1 0 15.5 6.2 15.5 16S41.6 48 32.5 48H22z" fill="url(#accent)"/>
+  <path d="M28 24v16h4.5c4.7 0 7.5-3 7.5-8s-2.8-8-7.5-8z" fill="#ffffff"/>
+  <circle cx="47" cy="19" r="5" fill="#F28C28"/>
+</svg>

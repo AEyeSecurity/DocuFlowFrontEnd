@@ -1,0 +1,13 @@
+@use '../../../colors' as *;
+
+.custom-carousel {
+  border-bottom: 3px solid $primary-color;
+}
+
+.carousel-image {
+  min-height: 30rem;
+  max-height: 30rem;
+  object-fit: cover;
+  width: 100%;
+  display: block;
+}

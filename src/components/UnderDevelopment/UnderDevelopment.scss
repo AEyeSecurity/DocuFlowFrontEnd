@@ -1,0 +1,288 @@
+@use '../../colors' as *;
+
+// Animaciones
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes progressFill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+// Development Hero Section
+.development-hero {
+  background: linear-gradient(135deg, $primary-color 0%, darken($primary-color, 15%) 100%);
+  color: $text-color-light;
+  padding-top: 80px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+  }
+}
+
+.development-content {
+  position: relative;
+  z-index: 2;
+}
+
+.logo-container {
+  margin-bottom: 2rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.development-logo {
+  max-width: 150px;
+  height: auto;
+  filter: drop-shadow(0 10px 20px $shadow-black-30);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 15px 25px $shadow-black-40);
+  }
+}
+
+.development-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+
+  .highlight {
+    color: $text-color-light;
+    text-shadow: 2px 2px 4px $shadow-black-30;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+.development-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  opacity: 0.95;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+}
+
+.development-features {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    background: $white-10;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    border: 1px solid $white-20;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $white-20;
+      transform: translateY(-2px);
+    }
+
+    .feature-icon {
+      font-size: 1.5rem;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    span {
+      font-weight: 500;
+      font-size: 1rem;
+    }
+  }
+}
+
+.development-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+// Botones personalizados
+.btn-primary-custom {
+  background-color: $text-color-light;
+  border-color: $text-color-light;
+  color: $primary-color;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px $shadow-black-20;
+
+  &:hover {
+    background-color: darken($text-color-light, 5%);
+    border-color: darken($text-color-light, 5%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px $shadow-black-30;
+    color: $primary-color;
+  }
+}
+
+.btn-secondary-custom {
+  background-color: transparent !important;
+  border: 2px solid $text-color-light !important;
+  color: $text-color-light !important;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+
+  &:hover, &:focus, &:active, &:visited {
+    background-color: $text-color-light !important;
+    border: 2px solid $text-color-light !important;
+    color: $primary-color !important;
+    transform: translateY(-2px);
+    text-decoration: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.btn-large {
+  padding: 1rem 3rem;
+  font-size: 1.1rem;
+}
+
+.progress-indicator {
+  max-width: 400px;
+  margin: 0 auto;
+
+  .progress-bar {
+    width: 100%;
+    height: 8px;
+    background: $white-20;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    position: relative;
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, $text-color-light, lighten($text-color-light, 10%));
+      border-radius: 4px;
+      animation: progressFill 3s ease-in-out infinite;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, transparent, $white-40, transparent);
+        animation: progressFill 3s ease-in-out infinite;
+      }
+    }
+  }
+
+  .progress-text {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0;
+    font-style: italic;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .development-hero {
+    padding-top: 100px;
+  }
+
+  .development-title {
+    font-size: 2rem;
+  }
+
+  .development-subtitle {
+    font-size: 1rem;
+  }
+
+  .development-features {
+    .feature-item {
+      padding: 0.75rem 1rem;
+      
+      span {
+        font-size: 0.9rem;
+      }
+    }
+  }
+} 

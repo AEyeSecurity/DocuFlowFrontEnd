@@ -1,0 +1,88 @@
+@use '../../../colors' as *;
+
+@keyframes fadeInHIW {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-hiw {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.fade-in-hiw.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.how-it-works-container {
+  margin-top: 2rem;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: $text-color-light-contrast;
+  }
+
+  .text-column {
+    h3 {
+      font-size: 1.7rem;
+      font-weight: bold;
+      color: $primary-color;
+      margin-top: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: $text-color-light-contrast;
+    }
+  }
+
+  .image-column {
+    padding: 0;
+
+    img {
+      box-shadow: 0px 4px 8px $shadow-black-10;
+    }
+  }
+
+  .align-items-center {
+    background-color: $background-color;
+    margin-bottom: 2rem;
+    border: 1px solid $border-light-gray;
+    border-top: 6px solid $primary-color !important;
+
+    &:hover {
+      transition: all 0.3s ease-in-out;
+      transform: scale(1.01);
+      box-shadow: 0px 4px 6px $shadow-black-20;
+    }
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      /* Cambia la dirección a columna en pantallas pequeñas */
+      text-align: center;
+      /* Centra el texto */
+
+      .image-column {
+        order: 1;
+        /* Asegura que las imágenes aparezcan primero */
+      }
+
+      .text-column {
+        order: 2;
+        /* Asegura que el texto aparezca después de las imágenes */
+        margin-top: 1rem;
+        /* Agrega espacio entre la imagen y el texto */
+      }
+    }
+  }
+}

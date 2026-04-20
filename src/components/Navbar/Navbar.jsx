@@ -110,7 +110,7 @@ function Navbar_AE() {
           </Nav.Link>
           <Nav.Link
             className="navlink"
-            href="https://wa.me/543514085659?text=Quiero%20conocer%20m%C3%A1s%20de%20DocuFlow%21"
+            href="https://wa.me/5493513095969?text=Quiero%20conocer%20m%C3%A1s%20de%20DocuFlow%21"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -220,7 +220,7 @@ function Navbar_AE() {
                   borderRadius: "5px",
                   transition: "background-color 0.3s",
                 }}
-                href="https://wa.me/543514085659?text=Quiero%20conocer%20m%C3%A1s%20de%20DocuFlow%21"
+                href="https://wa.me/5493513095969?text=Quiero%20conocer%20m%C3%A1s%20de%20DocuFlow%21"
                 target="_blank"
                 rel="noopener noreferrer"
               >

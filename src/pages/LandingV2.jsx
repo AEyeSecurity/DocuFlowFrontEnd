@@ -42,7 +42,7 @@ function LandingV2() {
                 DocuFlow automatiza la carga de remitos, facturas y cheques para que tu equipo deje de perder horas en tareas manuales.
               </p>
               <div className="hero-buttons-main">
-                <Button className="btn-primary-custom-main" href="https://wa.me/543514085659?text=Quiero%20conocer%20m%C3%A1s%20de%20DocuFlow%21" target="_blank" rel="noopener noreferrer">
+                <Button className="btn-primary-custom-main" href="https://wa.me/5493513095969?text=Quiero%20conocer%20m%C3%A1s%20de%20DocuFlow%21" target="_blank" rel="noopener noreferrer">
                   Hablar por WhatsApp
                 </Button>
                 <Button className="btn-secondary-custom-main" onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}>
@@ -86,7 +86,7 @@ function LandingV2() {
                   </p>
                 </div>
                 <div className="how-it-works-actions-main">
-                  <Button className="btn-primary-custom-main" href="https://wa.me/543514085659?text=Quiero%20conocer%20m%C3%A1s%20de%20DocuFlow%21" target="_blank" rel="noopener noreferrer">
+                  <Button className="btn-primary-custom-main" href="https://wa.me/5493513095969?text=Quiero%20conocer%20m%C3%A1s%20de%20DocuFlow%21" target="_blank" rel="noopener noreferrer">
                     Hablar por WhatsApp
                   </Button>
                   <Button className="btn-secondary-custom-main how-it-works-secondary-main" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
@@ -170,7 +170,7 @@ function LandingV2() {
               <div className="feature-closing-main fade-in-main">
                 <p>DocuFlow resuelve un problema real: el tiempo que hoy se pierde cargando documentos a mano.</p>
                 <div className="feature-actions-main">
-                  <Button className="btn-primary-custom-main" href="https://wa.me/543514085659?text=Quiero%20conocer%20m%C3%A1s%20de%20DocuFlow%21" target="_blank" rel="noopener noreferrer">
+                  <Button className="btn-primary-custom-main" href="https://wa.me/5493513095969?text=Quiero%20conocer%20m%C3%A1s%20de%20DocuFlow%21" target="_blank" rel="noopener noreferrer">
                     Hablar por WhatsApp
                   </Button>
                   <Button className="btn-secondary-custom-main feature-secondary-main" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
@@ -213,7 +213,7 @@ function LandingV2() {
                 </div>
                 <p className="raas-note-main">Necesitas otro documento o un flujo mas especifico? Podemos ampliar DocuFlow segun la necesidad de tu operacion.</p>
                 <div className="raas-actions-main">
-                  <Button className="btn-primary-custom-main" href="https://wa.me/543514085659?text=Quiero%20conocer%20m%C3%A1s%20de%20DocuFlow%21" target="_blank" rel="noopener noreferrer">
+                  <Button className="btn-primary-custom-main" href="https://wa.me/5493513095969?text=Quiero%20conocer%20m%C3%A1s%20de%20DocuFlow%21" target="_blank" rel="noopener noreferrer">
                     Hablar por WhatsApp
                   </Button>
                   <Button className="btn-secondary-custom-main raas-secondary-main" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
@@ -246,7 +246,7 @@ function LandingV2() {
             <Col lg={10}>
               <div className="industries-closing-main fade-in-main">
                 <p>Si hoy alguien de tu equipo pasa horas cargando documentos, probablemente ya haya una parte de tu operacion que DocuFlow puede simplificar.</p>
-                <Button className="btn-primary-custom-main" href="https://wa.me/543514085659?text=Quiero%20conocer%20m%C3%A1s%20de%20DocuFlow%21" target="_blank" rel="noopener noreferrer">
+                <Button className="btn-primary-custom-main" href="https://wa.me/5493513095969?text=Quiero%20conocer%20m%C3%A1s%20de%20DocuFlow%21" target="_blank" rel="noopener noreferrer">
                   Consultar por tu caso
                 </Button>
               </div>
@@ -262,7 +262,7 @@ function LandingV2() {
               <div className="cta-content-main fade-in-main">
                 <h2>Preventa abierta para primeros barrios privados</h2>
                 <p>Estamos abriendo conversaciones con administraciones, desarrollistas y responsables de seguridad interesados en incorporar patrullaje autonomo en sus predios.</p>
-                <Button className="btn-primary-custom-main btn-large-main" href="https://wa.me/543514085659?text=Quiero%20conocer%20m%C3%A1s%20de%20DocuFlow%21" target="_blank" rel="noopener noreferrer">
+                <Button className="btn-primary-custom-main btn-large-main" href="https://wa.me/5493513095969?text=Quiero%20conocer%20m%C3%A1s%20de%20DocuFlow%21" target="_blank" rel="noopener noreferrer">
                   Solicitar Consulta Gratuita
                 </Button>
               </div>
